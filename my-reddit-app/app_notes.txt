@@ -1,0 +1,57 @@
+=========================
+COLOR PALETTE
+=========================
+- Matcha: #A7A99E
+- Blush: #C4A397
+- Dusty Rose: #D5C1B3
+- Sand: #DAD0C6
+- Ash: #E0DCD5
+- Cream: #F2EEE6
+
+
+=========================
+LAYOUT
+=========================
+Top:
+----
+-Banner
+-Logo and app name
+-Search bar with search icon
+    -search bar allows to search for posts not subreddits
+    -if no results, show homepage button
+
+
+Middle:
+-------
+-List of posts in the selected subreddit (default is Home)
+-Posts are individual "boxes"
+    -Show post # of likes
+    -User can upvote, downvote
+        -upvote with up arrow, changes color to show that it is selected. increase like count by 1
+        -downvote with down arrow, changes color to show that it is selected. decrease like count by 1
+        -if already upvoted but want to change to downvote, select downvote and remove upvote selection. decrease like count
+        -if already downvoted but want to change to upvote, select upvote and remove downvote selection. increase like count
+        -unselect (click the up/down arrow again) to undo upcote/downvote. reset like count based on the change
+    -Show comments button/icon
+        -shows number of comments
+        -when clicked expands and lists all comments for that post, also icon changes color to show it is open
+        -when clicked again will hide the comments, color goes back to default
+    -Show time since post was made
+
+
+Side (left or right?):
+----------------------
+-Subreddits list
+-Clicking a subreddit will update middle to show posts from that subreddit
+    -highlight the selected subreddit to show that it is selected
+
+
+=========================
+COMPONENTS
+=========================
+Home
+Subreddits
+SearchBar
+Posts
+Voting
+Comments
