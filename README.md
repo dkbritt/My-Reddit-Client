@@ -1,5 +1,5 @@
-# My-Reddit-Client
-Building a copycat Reddit application using what I've learned about HTML/CSS, JavaScript, React, Redux, and Git.
+# RedditLurker
+Building a copycat, minimalistic version of Reddit using what I've learned about HTML/CSS, JavaScript, React, Redux, and Git.
 
 # Redux Toolkit TypeScript Example
 
