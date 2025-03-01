@@ -1,8 +1,6 @@
-/* html, body{
-    height: 100%;
-    margin: 0;
-    padding: 0;
-} */
+html, body{
+   font-size: 16px; 
+}
 
 .banner {
     /* padding: 20px; */
@@ -69,8 +67,10 @@
 }
 
 .searchInput {
-    background-color: whitesmoke;
-    border-radius: 7%;
+    background-color: lightgray;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+    width: 15rem;
 }
 
 .search-icon {
