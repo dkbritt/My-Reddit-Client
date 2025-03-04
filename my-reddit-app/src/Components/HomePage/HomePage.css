@@ -87,8 +87,9 @@ html, body{
     flex: 0;
     background-color: rgb(255, 255, 255, 0.8);
     border-radius: .25rem;
+    padding: 0 1rem;
 }
 
-.subreddits h1{
+/* .subreddits h1{
     text-align: center;
-}
+} */

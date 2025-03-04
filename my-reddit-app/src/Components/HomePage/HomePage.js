@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FaSearch, FaReddit } from 'react-icons/fa';
+import Subreddits from '../Subreddits/Subreddits';
 import './HomePage.css';
 
 const HomePage = () => {
+    
+    const [selectedSubreddit, setSelectedSubreddit] = useState('Home');
+
+    const handleSelectSubreddit = (subreddit) => {
+        setSelectedSubreddit(subreddit);
+    }
+
     return (
         <div className='home'>
             <div className='banner'>
@@ -19,11 +27,10 @@ const HomePage = () => {
             </div>
             <div className='pageContent'>
                 <div className='subreddits'>
-                    <h1>Subreddits</h1>
-                    {/* subreddits list will go here */}
+                    <Subreddits onSelectedSubreddit={handleSelectSubreddit} />
                 </div>
                 <div className='posts'>
-                    <h1>Posts</h1>
+                    <h1>Posts in {selectedSubreddit}</h1>
                     {/* posts will go here */}
                 </div>
             </div>
