@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FaSearch, FaReddit } from 'react-icons/fa';
 import Subreddits from '../Subreddits/Subreddits';
+import Posts from '../Posts/Posts';
 import './HomePage.css';
 
 const HomePage = () => {
@@ -30,8 +31,8 @@ const HomePage = () => {
                     <Subreddits onSelectedSubreddit={handleSelectSubreddit} />
                 </div>
                 <div className='posts'>
-                    <h1>Posts in {selectedSubreddit}</h1>
-                    {/* posts will go here */}
+                    <h1>Posts in r/{selectedSubreddit}</h1>
+                    <Posts></Posts>
                 </div>
             </div>
         </div>
