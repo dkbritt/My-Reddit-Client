@@ -22,8 +22,8 @@ const Subreddits = ({ onSelectedSubreddit }) => {
             .then(data => {
                 // Mapping over the fetched data to extract relevant subreddit information
                 const subredditData = data.data.children.map(child => ({
-                    name: child.data.display_name, // Subreddit name
-                    header_img: child.data.header_img || 'https://www.redditstatic.com/desktop2x/img/favicon/android-icon-192x192.png' // Subreddit header image or default image if none exists
+                    name: child.data.display_name_prefixed, // Subreddit name
+                    icon_img: child.data.icon_img || 'https://www.redditstatic.com/desktop2x/img/favicon/android-icon-192x192.png' // Subreddit header image or default image if none exists
                 }));
                 // Updating the 'subreddits' state with the fetched subreddit data
                 setSubreddits(subredditData);
@@ -67,8 +67,8 @@ const Subreddits = ({ onSelectedSubreddit }) => {
                         key={index}
                         onClick={() => handleSelectedSubreddit(subreddit.name)}
                         className={selectedSubreddit === subreddit.name ? 'selected' : ''}>
-                        {/* Subreddit header image */}
-                        <img src={subreddit.header_img} alt={`${subreddit.name} header`} className='subreddit-header-img' />
+                        {/* Subreddit icon image */}
+                        <img src={subreddit.icon_img} alt={`${subreddit.name} icon`} className='subreddit-icon-img' />
                         {/* Subreddit name */}
                         <p>{subreddit.name}</p>
                     </li>
