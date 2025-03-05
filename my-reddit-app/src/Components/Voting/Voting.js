@@ -1,6 +1,6 @@
 import './Voting.css';
 import { TiArrowUpOutline, TiArrowDownOutline } from "react-icons/ti";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 
 const Voting = ({ initialVoteScore }) => {
@@ -8,6 +8,10 @@ const Voting = ({ initialVoteScore }) => {
     const [hasVoted, setHasVoted] = useState(false);
     const [hasDownvoted, setHasDownvoted] = useState(false);
     const [hasUpvoted, setHasUpvoted] = useState(false);
+
+    useEffect(() => {
+        setVoteScore(initialVoteScore);
+    }, [initialVoteScore]);
 
     const handleUpvote = () => {
         // Case if user has not voted yet

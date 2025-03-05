@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import { FaSearch, FaReddit } from 'react-icons/fa';
 import Subreddits from '../Subreddits/Subreddits';
-import Posts from '../Posts/Posts';
+import PostsList from '../PostsList/PostsList';
 import './HomePage.css';
 
 const HomePage = () => {
     
-    const [selectedSubreddit, setSelectedSubreddit] = useState('popular`');
+    const [selectedSubreddit, setSelectedSubreddit] = useState('popular');
 
     const handleSelectSubreddit = (subreddit) => {
         setSelectedSubreddit(subreddit);
+        // console.log(subreddit);
     }
 
     return (
@@ -31,7 +32,7 @@ const HomePage = () => {
                     <Subreddits onSelectedSubreddit={handleSelectSubreddit} />
                 </div>
                 <div className='posts'>
-                    <Posts></Posts>
+                    <PostsList selectedSubreddit={selectedSubreddit} />
                 </div>
             </div>
         </div>
