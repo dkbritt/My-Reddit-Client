@@ -6,7 +6,7 @@ import './HomePage.css';
 
 const HomePage = () => {
     
-    const [selectedSubreddit, setSelectedSubreddit] = useState('Home');
+    const [selectedSubreddit, setSelectedSubreddit] = useState('popular`');
 
     const handleSelectSubreddit = (subreddit) => {
         setSelectedSubreddit(subreddit);
@@ -31,7 +31,6 @@ const HomePage = () => {
                     <Subreddits onSelectedSubreddit={handleSelectSubreddit} />
                 </div>
                 <div className='posts'>
-                    <h1>Posts in {selectedSubreddit}</h1>
                     <Posts></Posts>
                 </div>
             </div>

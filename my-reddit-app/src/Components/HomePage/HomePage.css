@@ -40,9 +40,9 @@ html, body{
 
 .posts {
     flex: 1;
-    margin-left: 10px;
+    /* margin-left: 10px;
     background-color: rgb(255, 255, 255, 0.8);
-    border-radius: .25rem;
+    border-radius: .25rem; */
 }
 
 .posts h1 {
