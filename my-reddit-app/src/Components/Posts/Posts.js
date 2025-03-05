@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import './Posts.css';
-import { TiArrowUpOutline, TiArrowDownOutline } from "react-icons/ti";
 import { formatTimeAgo } from '../../utils/formatTimeAgo';
 import { formatNumber } from '../../utils/formatNumber';
 import { FaRegCommentAlt } from "react-icons/fa";
+import Voting from '../Voting/Voting';
 
 const Posts = () => {
     const [posts, setPosts] = useState([]);
@@ -12,7 +12,7 @@ const Posts = () => {
     // const [selectedPost, setSelectedPost] = useState(null);
 
     useEffect(() => {
-        fetch('https://www.reddit.com/r/popular.json')
+        fetch('https://www.reddit.com/r/home.json')
             .then(response => response.json())
             .then(data => {
                 const postData = data.data.children.map(child => ({
@@ -52,7 +52,7 @@ const Posts = () => {
                 <div key={index} className='post-container'>
                     
                     <div className='post-votes'>
-                        {/* Voting Component */}
+                        <Voting initialVoteScore={formatNumber(post.vote_score)} />
                     </div>
                     <div className='post-content'>
                         <div className="post-header">

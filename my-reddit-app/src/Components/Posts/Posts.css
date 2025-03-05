@@ -7,9 +7,6 @@ h3 {
     margin-left: .25rem;
 }
 
-/* .downvote:hover {
-    color: #C4A397;
-} */
 
 .horizontal-line {
     border-top: 1px solid #D5C1B3;
@@ -63,24 +60,3 @@ h3 {
     font-style: italic;
     color: #A7A99E;
 }
-
-.post-votes {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* .upvote:hover {
-    color: #A7A99E;
-}
-
-.vote {
-    cursor: pointer;
-    font-size: 1.5rem;
-    color: #D5C1B3;
-}
-
-.vote-count {
-    padding: 0.5rem 0;
-    font-weight: bold;
-} */
