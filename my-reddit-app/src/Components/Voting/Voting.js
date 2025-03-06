@@ -1,6 +1,7 @@
 import './Voting.css';
 import { TiArrowUpOutline, TiArrowDownOutline } from "react-icons/ti";
 import React, { useState, useEffect } from 'react';
+import { formatNumber } from '../../utils/formatNumber';
 
 
 const Voting = ({ initialVoteScore }) => {
@@ -66,7 +67,7 @@ const Voting = ({ initialVoteScore }) => {
             <TiArrowUpOutline
                 className={`vote-button upvote ${hasUpvoted ? 'upActive' : ''}`}
                 onClick={handleUpvote}/>
-            <span className={`vote-score ${hasUpvoted ? 'upActive' : ''} ${hasDownvoted ? 'downActive' : ''}`}>{voteScore}</span>
+            <span className={`vote-score ${hasUpvoted ? 'upActive' : ''} ${hasDownvoted ? 'downActive' : ''}`}>{formatNumber(voteScore)}</span>
             <TiArrowDownOutline
                 className={`vote-button downvote ${hasDownvoted ? 'downActive' : ''}`}
                 onClick={handleDownvote}/>
