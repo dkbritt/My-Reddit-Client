@@ -4,9 +4,15 @@ import { formatTimeAgo } from '../../utils/formatTimeAgo';
 import { formatNumber } from '../../utils/formatNumber';
 import { FaRegCommentAlt } from "react-icons/fa";
 import Voting from '../Voting/Voting';
+import CommentsList from '../CommentsList.js/CommentsList';
 
 const Post = ({ post }) => {
-    
+    const [commentsHidden, setCommentsHidden] = React.useState(true);
+
+    const handleCommentHide = () => {
+        setCommentsHidden(!commentsHidden);
+    }
+
     // Function to check if the media is an image
     const isImage = (url) => {
         return url.match(/\.(jpeg|jpg|gif|png|bmp|webp)$/) != null;
@@ -28,9 +34,14 @@ const Post = ({ post }) => {
                     <span className="post-author">{post.author}</span>
                     <span className="post-created">{formatTimeAgo(post.created)}</span>
                     <div className='post-comments'>
-                        <FaRegCommentAlt className='icon comment-icon' />
+                        <FaRegCommentAlt 
+                            className='icon comment-icon'
+                            onClick={handleCommentHide}/>
                         <span className='comment-count'>{formatNumber(post.comment_count)}</span>
                     </div>
+                </div>
+                <div className={`comments-list ${commentsHidden ? 'hidden' : 'visible'}`}>
+                    <CommentsList subreddit={post.subreddit} postId={post.id} />
                 </div>
             </div>    
         </div>

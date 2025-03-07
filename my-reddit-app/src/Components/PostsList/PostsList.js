@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import './PostsList.css';
 import Post from "../Post/Post";
 
+const cache = {}; // Cache object to store fetched data
+
 const PostsList = ({ selectedSubreddit }) => {
     const [posts, setPosts] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -9,6 +11,12 @@ const PostsList = ({ selectedSubreddit }) => {
 
     useEffect(() => {
         const fetchPosts = async () => {
+            if (cache[selectedSubreddit]) {
+                setPosts(cache[selectedSubreddit]);
+                setLoading(false);
+                return;
+            }
+            
             try {
                 const response = await fetch(`https://www.reddit.com/r/${selectedSubreddit}.json`);
                 if (!response.ok) {
@@ -25,6 +33,7 @@ const PostsList = ({ selectedSubreddit }) => {
                     created: child.data.created_utc,
                     subreddit: child.data.subreddit,
                 }));
+                cache[selectedSubreddit] = postData; // Store data in cache
                 setPosts(postData);
                 setLoading(false);
             } catch (error) {

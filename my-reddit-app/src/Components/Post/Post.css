@@ -1,3 +1,12 @@
+.comment-icon {
+    font-size: 1rem;
+    margin-right: 0.5rem;
+}
+
+.comment-icon:hover {
+    background-color: rgb(87, 87, 86, 0.2);
+}
+
 .post-container {
     display: flex;
     border: 1px solid #D5C1B3;
@@ -50,4 +59,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
 }
