@@ -21,7 +21,7 @@ const CommentsList = ({ subreddit, postId }) => {
             }
             
             try {
-                const response = await fetch(`https://www.reddit.com/r/${subreddit}/comments/${postId}.json`);
+                const response = await fetch(`http://localhost:5000/api/r/${subreddit}/comments/${postId}.json`);
                 if (!response.ok) {
                     throw new Error(`Error: ${response.status} ${response.statusText}`);
                 }
