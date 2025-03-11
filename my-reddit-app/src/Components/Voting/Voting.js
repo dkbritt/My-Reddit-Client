@@ -4,11 +4,13 @@ import React, { useState, useEffect } from 'react';
 import { formatNumber } from '../../utils/formatNumber';
 
 
-const Voting = ({ initialVoteScore }) => {
+const Voting = ({ initialVoteScore, size }) => {
     const [voteScore, setVoteScore] = useState(initialVoteScore);
     const [hasVoted, setHasVoted] = useState(false);
     const [hasDownvoted, setHasDownvoted] = useState(false);
     const [hasUpvoted, setHasUpvoted] = useState(false);
+
+    const votingSize = size === 'smaller' ? 'vote-smaller' : '';
 
     useEffect(() => {
         setVoteScore(initialVoteScore);
@@ -63,7 +65,7 @@ const Voting = ({ initialVoteScore }) => {
     };
 
     return (
-        <div className='voting-container'>
+        <div className={`voting-container ${votingSize}`}>
             <TiArrowUpOutline
                 className={`vote-button upvote ${hasUpvoted ? 'upActive' : ''}`}
                 onClick={handleUpvote}/>

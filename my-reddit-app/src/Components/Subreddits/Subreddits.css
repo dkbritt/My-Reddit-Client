@@ -3,7 +3,7 @@ li {
     align-items: center;
     justify-content: start;
     /* padding: 0 0.5rem; */
-    border-bottom: 1px solid #D5C1B3;
+    border-top: 1px solid #D5C1B3;
     cursor: pointer;
 }
 

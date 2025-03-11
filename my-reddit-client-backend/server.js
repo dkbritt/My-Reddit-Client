@@ -24,8 +24,10 @@ app.get('/api/subreddits', async (req, res) => {
 
 app.get('/api/r/:subreddit/comments/:postId', async (req, res) => {
     const { subreddit, postId } = req.params;
+    const url = `https://www.reddit.com/r/${subreddit}/comments/${postId}.json`; // Correct URL construction
     try {
-        const response = await fetch(`https://www.reddit.com/r/${subreddit}/comments/${postId}.json`);
+        console.log(`Fetching URL: ${url}`); // Log the URL being fetched
+        const response = await fetch(url);
         if (!response.ok) {
             const errorText = await response.text();
             throw new Error(`Error: ${response.status} ${response.statusText} - ${errorText}`);
@@ -40,8 +42,10 @@ app.get('/api/r/:subreddit/comments/:postId', async (req, res) => {
 
 app.get('/api/r/:subreddit.json', async (req, res) => {
     const { subreddit } = req.params;
+    const url = `https://www.reddit.com/r/${subreddit}.json`;
     try {
-        const response = await fetch(`https://www.reddit.com/r/${subreddit}.json`);
+        console.log(`Fetching URL: ${url}`); // Log the URL being fetched
+        const response = await fetch(url);
         if (!response.ok) {
             const errorText = await response.text();
             throw new Error(`Error: ${response.status} ${response.statusText} - ${errorText}`);

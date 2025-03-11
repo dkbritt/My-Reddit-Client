@@ -1,0 +1,33 @@
+.comment-author {
+    font-weight: bold;
+    color: #A7A99E;
+}
+
+.comment-body {
+    padding-top: 0.5rem;
+}
+
+.comment-container {
+    display: flex;
+    margin: 10px;
+    padding: 1rem;
+    border: 1px solid #e1e1e1;
+    border-radius: 5px;
+    max-width: 100%;
+}
+
+.comment-created {
+    font-style: italic;
+}
+
+.comment-creator-details {
+    display: flex;
+    justify-content: space-between;
+}
+
+.comment-details{
+    display: flex;
+    flex-direction: column;
+    margin-left: 1rem;
+    flex: 1;
+}

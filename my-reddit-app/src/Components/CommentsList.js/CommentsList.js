@@ -1,7 +1,7 @@
 import './CommentsList.css';
 import React, {useState, useEffect} from 'react';
 // import { formatTimeAgo } from '../../utils/formatTimeAgo';
-// import Comment from '../Comment/Comment';
+import Comment from '../Comment/Comment';
 
 const cache = {}; // Simple in-memory cache
 
@@ -21,7 +21,7 @@ const CommentsList = ({ subreddit, postId }) => {
             }
             
             try {
-                const response = await fetch(`http://localhost:5000/api/r/${subreddit}/comments/${postId}.json`);
+                const response = await fetch(`http://localhost:5000/api/r/${subreddit}/comments/${postId}`);
                 if (!response.ok) {
                     throw new Error(`Error: ${response.status} ${response.statusText}`);
                 }
@@ -30,6 +30,7 @@ const CommentsList = ({ subreddit, postId }) => {
                     author: child.data.author,
                     body: child.data.body,
                     created: child.data.created_utc,
+                    score: child.data.score
                 }));
                 cache[cacheKey] = commentData; // Store data in cache
                 setComments(commentData);
@@ -58,13 +59,8 @@ const CommentsList = ({ subreddit, postId }) => {
     return (
         <div className='comments-list'>
             {comments.map((comment, index) => (
-                <div key={index} className='comment-container'>
-                    <div className='comment-content'>
-                        {/* <Comment comment={comment.body} author={comment.author} created={comment.created}/> */}
-                        <span className='comment-author'>{comment.author}</span>
-                        {/* <span className='comment-created'>{formatTimeAgo(comment.created)}</span> */}
-                        <div className='comment-text'>{comment.body}</div>
-                    </div>
+                <div key={index}  className='comment-content'>
+                    <Comment  comment={comment}/>
                 </div>
             ))}
         </div>
