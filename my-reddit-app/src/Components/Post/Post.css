@@ -19,6 +19,7 @@ h3:hover {
     padding: 1rem;
     margin: 0 1rem 1rem 1rem;
     background-color: rgb(255, 255, 255, 0.8);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     align-items: flex-start;
 }
 

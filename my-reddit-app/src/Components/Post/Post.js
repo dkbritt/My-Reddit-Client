@@ -20,9 +20,14 @@ const Post = ({ post }) => {
 
     // Function to check if the media is an image
     const isImage = (url) => {
-        return url.match(/\.(jpeg|jpg|gif|png|bmp|webp)$/) != null;
+        return url.match(/\.(jpeg|jpg|gif|png|bmp|webp)$/i) != null;
     }
-    
+
+    // Function to check if the media is a video
+    // const isVideo = (url) => {
+    //     return url.match(/\.(mp4|webm|ogg|mov|avi|mkv)$/i) != null;
+    // }
+
     return (
         <div className='post-container'>
             <Voting initialVoteScore={post.vote_score} />
@@ -32,11 +37,17 @@ const Post = ({ post }) => {
                     <span className='post-subreddit'>r/{post.subreddit}</span>
                 </div> 
                 <div className={`post-body ${postBodyHidden ? 'hidden' : 'visible'}`}>
-                        <p>{post.post_body}</p>
+                    <p>{post.post_body}</p>
                 </div>
-                {post.media && isImage(post.media) && (
-                    <img src={post.media} alt='Post media' className='post-media' />
+                {post.image && isImage(post.image) && (
+                    <img src={post.image} alt='Post media' className='post-media' />
                 )}
+                {/* {post.video && isVideo(post.video) && (
+                    <video controls className='post-media'>
+                        <source src={post.video} type='video/mp4' />
+                        Your browser does not support the video tag.
+                    </video>
+                )} */}
                 <div className='horizontal-line'></div>
                 <div className='post-details'>
                     <span className="post-author">{post.author}</span>
