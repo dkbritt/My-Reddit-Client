@@ -8,9 +8,14 @@ import CommentsList from '../CommentsList.js/CommentsList';
 
 const Post = ({ post }) => {
     const [commentsHidden, setCommentsHidden] = React.useState(true);
+    const [postBodyHidden, setPostBodyHidden] = React.useState(true);
 
     const handleCommentHide = () => {
         setCommentsHidden(!commentsHidden);
+    }
+
+    const handlePostBodyHide = () => {
+        setPostBodyHidden(!postBodyHidden);
     }
 
     // Function to check if the media is an image
@@ -23,9 +28,12 @@ const Post = ({ post }) => {
             <Voting initialVoteScore={post.vote_score} />
             <div className='post-content'>
                 <div className="post-header">
-                    <h3>{post.title}</h3>
+                    <h3 onClick={handlePostBodyHide}>{post.title}</h3>
                     <span className='post-subreddit'>r/{post.subreddit}</span>
                 </div> 
+                <div className={`post-body ${postBodyHidden ? 'hidden' : 'visible'}`}>
+                        <p>{post.post_body}</p>
+                </div>
                 {post.media && isImage(post.media) && (
                     <img src={post.media} alt='Post media' className='post-media' />
                 )}

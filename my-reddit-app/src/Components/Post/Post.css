@@ -1,3 +1,8 @@
+h3:hover {
+    color: #A7A99E;
+    cursor: pointer;
+}
+
 .comment-icon {
     font-size: 1rem;
     margin-right: 0.5rem;
@@ -53,6 +58,7 @@
     font-weight: bold;
     font-style: italic;
     color: #A7A99E;
+    padding: 0.5rem;
 }
 
 .post-votes {

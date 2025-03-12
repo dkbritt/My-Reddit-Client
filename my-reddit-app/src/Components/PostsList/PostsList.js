@@ -32,6 +32,7 @@ const PostsList = ({ selectedSubreddit }) => {
                     author: child.data.author,
                     created: child.data.created_utc,
                     subreddit: child.data.subreddit,
+                    post_body: child.data.selftext
                 }));
                 cache[selectedSubreddit] = postData; // Store data in cache
                 setPosts(postData);
