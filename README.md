@@ -1,32 +1,112 @@
-# RedditLurker
-Building a copycat, minimalistic version of Reddit using what I've learned about HTML/CSS, JavaScript, React, Redux, and Git.
+# Reddit Lurker
 
-# Redux Toolkit TypeScript Example
+Reddit Lurker is a web application that allows users to browse and search for posts from various subreddits. Users can view post details, vote on posts, as well as vote and read comments on posts.
 
-This example shows how to integrate Next.js with [Redux Toolkit](https://redux-toolkit.js.org).
 
-**Redux Toolkit**(also known as "RTK" for short) provides a standardized way to write Redux logic. It includes utilities that help simplify many common use cases, including [store setup](https://redux-toolkit.js.org/api/configureStore), [creating reducers and writing immutable update logic](https://redux-toolkit.js.org/api/createreducer), and even [creating entire "slices" of state at once](https://redux-toolkit.js.org/api/createslice). This example showcases each of these features in conjunction with Next.js.
+## Technologies Used
 
-## Deploy Your Own
+- **Frontend:**
+  - React
+  - CSS (Flexbox)
+  - React Icons
+- **Backend:**
+  - Node.js
+  - Express
+  - Node-fetch
+- **Other:**
+  - date-fns (for date formatting)
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) or preview live with [StackBlitz](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-redux)
+## Features
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-redux&project-name=with-redux&repository-name=with-redux)
+- Browse posts from various subreddits
+- Select a subreddit from a pre-decided list
+- Search for posts by title
+- View post details (if available) by clicking post title
+- Read comments on posts by expanding/unhiding the comments button
+- Vote on individual comments
+- Voting on posts
 
-## How to Use
+## Future Work
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
+- **Show Video Media in Posts:** Currently, the application displays images in posts. Future work includes displaying video media in posts.
+- **Allow User to Enter Comments on Posts:** Enable users to add comments to posts.
+- **User Authentication:** Implement user authentication to allow users to log in and interact with posts.
+- **Post Creation:** Allow users to create new posts.
+- **Improved UI/UX:** Enhance the user interface and user experience with better design and animations.
+
+## How to Run the Project on Local PC
+
+### Prerequisites
+
+- Node.js and npm installed on your local machine
+
+### Backend Setup
+(Running this will help to avoid CORS issues)
+
+1. Clone the repository:
 
 ```bash
-npx create-next-app --example with-redux with-redux-app
+git clone https://github.com/your-username/reddit-lurker.git
+cd reddit-lurker/my-reddit-client-backend
 ```
+2. Install dependencies:
 
 ```bash
-yarn create next-app --example with-redux with-redux-app
+npm install
 ```
+
+3. Start the backend server:
 
 ```bash
-pnpm create next-app --example with-redux with-redux-app
+node server.js
 ```
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+The backend server will run on http://localhost:5000.
+
+
+### Frontend Setup
+
+1. Navigate to frontend directory:
+
+```bash
+cd ../my-reddit-app
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Start the frontend development server:
+
+```bash
+npm start
+```
+
+The frontend application will run on http://localhost:3000.
+
+
+
+## Directory Structure
+reddit-lurker/
+├── my-reddit-client-backend/
+│   ├── server.js
+│   └── ...
+├── my-reddit-app/
+│   ├── src/
+│   │   ├── Components/
+│   │   │   ├── HomePage/
+│   │   │   │   └── HomePage.js
+│   │   │   ├── Post/
+│   │   │   │   └── Post.js
+│   │   │   ├── PostsList/
+│   │   │   │   └── PostsList.js
+│   │   │   ├── Search/
+│   │   │   │   └── Search.js
+│   │   │   └── ...
+│   │   ├── utils/
+│   │   │   └── formatTimeAgo.js
+│   │   └── ...
+│   └── ...
+└── [README.md](http://_vscodecontentref_/0)
