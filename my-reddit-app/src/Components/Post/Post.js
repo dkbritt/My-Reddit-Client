@@ -23,11 +23,6 @@ const Post = ({ post }) => {
         return url.match(/\.(jpeg|jpg|gif|png|bmp|webp)$/i) != null;
     }
 
-    // Function to check if the media is a video
-    // const isVideo = (url) => {
-    //     return url.match(/\.(mp4|webm|ogg|mov|avi|mkv)$/i) != null;
-    // }
-
     return (
         <div className='post-container'>
             <Voting initialVoteScore={post.vote_score} />
@@ -42,12 +37,6 @@ const Post = ({ post }) => {
                 {post.image && isImage(post.image) && (
                     <img src={post.image} alt='Post media' className='post-media' />
                 )}
-                {/* {post.video && isVideo(post.video) && (
-                    <video controls className='post-media'>
-                        <source src={post.video} type='video/mp4' />
-                        Your browser does not support the video tag.
-                    </video>
-                )} */}
                 <div className='horizontal-line'></div>
                 <div className='post-details'>
                     <span className="post-author">{post.author}</span>

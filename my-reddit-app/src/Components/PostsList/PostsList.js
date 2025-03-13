@@ -24,13 +24,10 @@ const PostsList = ({ selectedSubreddit, searchQuery }) => {
                 }
                 const data = await response.json();
                 const postData = data.data.children.map(child => {
-                    // const media = child.data.media && child.data.media.secure_media ? child.data.media.secure_media : null;
-                    // const video = media && media.fallback_url ? media.fallback_url : null;
                     return {
                         id: child.data.id,
                         title: child.data.title,
                         image: child.data.url,
-                        // video: video,
                         vote_score: child.data.score,
                         comment_count: child.data.num_comments,
                         author: child.data.author,

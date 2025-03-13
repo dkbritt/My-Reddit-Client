@@ -2,7 +2,6 @@ li {
     display: flex;
     align-items: center;
     justify-content: start;
-    /* padding: 0 0.5rem; */
     border-top: 1px solid #D5C1B3;
     cursor: pointer;
 }
@@ -17,7 +16,6 @@ li p {
 }
 
 ul {
-    /* background-color: rgb(255, 255, 255, 0); */
     list-style: none;
     padding: 0;
     margin: 0;
@@ -27,12 +25,6 @@ ul {
     background-color: #A7A99E;
 }
 
-/* .subreddits-list {
-    flex: 0;
-    background-color: rgb(255, 255, 255, 0.2);
-    border-radius: .25rem;
-    padding: 0rem 1rem 1rem 1rem; 
-}*/
 
 .subreddit-icon-img {
     width: 1.5rem;

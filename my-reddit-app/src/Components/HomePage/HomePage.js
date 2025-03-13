@@ -12,7 +12,6 @@ const HomePage = () => {
 
     const handleSelectSubreddit = (subreddit) => {
         setSelectedSubreddit(subreddit);
-        // console.log(subreddit);
     };
 
     const handleSearch = (query) => {

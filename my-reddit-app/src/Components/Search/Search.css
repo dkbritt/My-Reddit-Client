@@ -1,15 +1,8 @@
 .searchBar {
-    /* flex: 1; */
     display: flex;
     align-items: center;
 }
 
-/* .searchBar-container {
-    display: flex;
-    justify-content: center; 
-    align-items: center;
-    height: 100%; 
-} */
 
 .searchButton {
     border: none;
@@ -25,7 +18,6 @@
 }
 
 .search-icon {
-    /* color: #E0DCD5; */
     font-size: 1rem;
 }
 

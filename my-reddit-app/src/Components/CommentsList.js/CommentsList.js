@@ -1,6 +1,5 @@
 import './CommentsList.css';
 import React, {useState, useEffect} from 'react';
-// import { formatTimeAgo } from '../../utils/formatTimeAgo';
 import Comment from '../Comment/Comment';
 
 const cache = {}; // Simple in-memory cache

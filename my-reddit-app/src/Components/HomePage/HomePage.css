@@ -3,7 +3,6 @@ html, body{
 }
 
 .banner {
-    /* padding: 20px; */
     display: flex;
     margin-bottom: 5px;
     background-color: rgb(255, 255, 255, 0.8);
@@ -18,12 +17,6 @@ html, body{
     justify-content: center;
 }
 
-/* .home {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-} */
-
 
 #logoText {
     font-weight: bold;
@@ -37,14 +30,10 @@ html, body{
     display: flex;
     margin: 10px;
     justify-content: flex-start;
-    /* flex-grow: 1; */
 }
 
 .posts {
     flex: 1;
-    /* margin-left: 10px;
-    background-color: rgb(255, 255, 255, 0.8);
-    border-radius: .25rem; */
 }
 
 .posts h1 {
@@ -74,7 +63,3 @@ html, body{
     padding: 0 1rem;
     max-height: fit-content;
 }
-
-/* .subreddits h1{
-    text-align: center;
-} */
