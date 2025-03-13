@@ -85,28 +85,3 @@ npm start
 ```
 
 The frontend application will run on http://localhost:3000.
-
-
-
-## Directory Structure
-reddit-lurker/
-├── my-reddit-client-backend/
-│   ├── server.js
-│   └── ...
-├── my-reddit-app/
-│   ├── src/
-│   │   ├── Components/
-│   │   │   ├── HomePage/
-│   │   │   │   └── HomePage.js
-│   │   │   ├── Post/
-│   │   │   │   └── Post.js
-│   │   │   ├── PostsList/
-│   │   │   │   └── PostsList.js
-│   │   │   ├── Search/
-│   │   │   │   └── Search.js
-│   │   │   └── ...
-│   │   ├── utils/
-│   │   │   └── formatTimeAgo.js
-│   │   └── ...
-│   └── ...
-└── [README.md](http://_vscodecontentref_/0)
