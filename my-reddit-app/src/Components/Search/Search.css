@@ -1,0 +1,35 @@
+.searchBar {
+    /* flex: 1; */
+    display: flex;
+    align-items: center;
+}
+
+/* .searchBar-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    height: 100%; 
+} */
+
+.searchButton {
+    border: none;
+    background-color: rgb(255, 255, 255, 0.4);
+    cursor: pointer;
+}
+
+.searchInput {
+    background-color: lightgray;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+    width: 15rem;
+}
+
+.search-icon {
+    /* color: #E0DCD5; */
+    font-size: 1rem;
+}
+
+.search-icon:hover {
+    color: #DAD0C6;
+    transform: scale(1.1);
+}

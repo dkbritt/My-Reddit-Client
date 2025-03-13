@@ -7,6 +7,8 @@ html, body{
     display: flex;
     margin-bottom: 5px;
     background-color: rgb(255, 255, 255, 0.8);
+    flex-direction: row;
+    align-items: center;
 }
 
 .bannerText {
@@ -54,34 +56,14 @@ html, body{
     font-size: 2rem;
 }
 
-.searchBar {
-    flex: 1;
+.search {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100%; /* Ensure the container takes up the full height */
+    flex: 1;
 }
 
-.searchButton {
-    border: none;
-    background-color: rgb(255, 255, 255, 0.4);
-}
-
-.searchInput {
-    background-color: lightgray;
-    border-radius: 5px;
-    border: 1px solid lightgray;
-    width: 15rem;
-}
-
-.search-icon {
-    /* color: #E0DCD5; */
-    font-size: 1rem;
-}
-
-.search-icon:hover {
-    color: #DAD0C6;
-    transform: scale(1.1);
-}
 
 .subreddits {
     flex: 0;

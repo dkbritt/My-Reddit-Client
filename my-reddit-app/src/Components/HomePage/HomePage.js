@@ -1,17 +1,23 @@
 import React, { useState } from 'react';
-import { FaSearch, FaReddit } from 'react-icons/fa';
+import { FaReddit } from 'react-icons/fa';
 import Subreddits from '../Subreddits/Subreddits';
 import PostsList from '../PostsList/PostsList';
 import './HomePage.css';
+import Search from '../Search/Search';
 
 const HomePage = () => {
     
     const [selectedSubreddit, setSelectedSubreddit] = useState('popular');
+    const [searchQuery, setSearchQuery] = useState('');
 
     const handleSelectSubreddit = (subreddit) => {
         setSelectedSubreddit(subreddit);
         // console.log(subreddit);
-    }
+    };
+
+    const handleSearch = (query) => {
+        setSearchQuery(query);
+    };
 
     return (
         <div className='home'>
@@ -20,19 +26,16 @@ const HomePage = () => {
                     <FaReddit className='icon reddit-logo' />
                     <p id='logoText'><span id='logoText-reddit'>Reddit</span>Lurker</p>
                 </div>
-                <form className='searchBar'>
-                    <input type='text' placeholder='Search...' className='searchInput'/>
-                    <button className='searchButton' type='submit'>
-                        <FaSearch className='icon search-icon'/>
-                    </button>
-                </form>
+                <div className='search'>
+                    <Search onSearch={handleSearch}></Search>
+                </div>
             </div>
             <div className='pageContent'>
                 <div className='subreddits'>
                     <Subreddits onSelectedSubreddit={handleSelectSubreddit} />
                 </div>
                 <div className='posts'>
-                    <PostsList selectedSubreddit={selectedSubreddit} />
+                    <PostsList selectedSubreddit={selectedSubreddit} searchQuery={searchQuery}/>
                 </div>
             </div>
         </div>

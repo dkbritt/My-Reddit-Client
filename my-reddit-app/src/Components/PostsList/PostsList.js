@@ -4,7 +4,7 @@ import Post from "../Post/Post";
 
 const cache = {}; // Cache object to store fetched data
 
-const PostsList = ({ selectedSubreddit }) => {
+const PostsList = ({ selectedSubreddit, searchQuery }) => {
     const [posts, setPosts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -52,6 +52,10 @@ const PostsList = ({ selectedSubreddit }) => {
         fetchPosts();
     }, [selectedSubreddit]);
 
+    const filteredPosts = posts.filter(post =>
+        post.title.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+
     if (loading) {
         return <div>Loading posts...</div>;
     }
@@ -62,7 +66,7 @@ const PostsList = ({ selectedSubreddit }) => {
 
     return (
         <div className='posts-list'>
-            {posts.map((post, index) => (
+            {filteredPosts.map((post, index) => (
                 <Post key={index} post={post} />
             ))}
         </div>
