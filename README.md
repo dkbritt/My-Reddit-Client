@@ -2,6 +2,7 @@
 
 Reddit Lurker is a web application that allows users to browse and search for posts from various subreddits. Users can view post details, vote on posts, as well as vote and read comments on posts.
 
+[Live site](https://myredditlurker.netlify.app/)
 
 ## Technologies Used
 
