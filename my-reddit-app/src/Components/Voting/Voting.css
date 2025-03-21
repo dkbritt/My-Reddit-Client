@@ -39,3 +39,21 @@
 .vote-smaller .vote-button {
     font-size: 1rem;
 }
+
+
+/* Different screen sizes */
+
+/* Cell phones */
+@media (max-width: 540px) {
+   
+    .voting-container {
+        font-size: 0.75rem;
+        padding: 0 0.5rem;
+    }
+
+}
+
+/* tablets */
+@media (min-width: 541px) and (max-width: 1024px) {
+
+}

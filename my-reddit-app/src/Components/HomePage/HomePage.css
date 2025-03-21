@@ -17,6 +17,11 @@ html, body{
     justify-content: center;
 }
 
+.home {
+    width: 100%; /* Ensure it takes the full width of the parent */
+    max-width: 1200px; /* Optional: Set a maximum width for larger screens */
+ }
+
 
 #logoText {
     font-weight: bold;
@@ -62,4 +67,49 @@ html, body{
     border-radius: .25rem;
     padding: 0 1rem;
     max-height: fit-content;
+}
+
+
+/* Different screen sizes */
+
+/* Cell phones */
+@media (max-width: 540px) {
+    .banner {
+        flex-direction: column;
+    }
+
+    .bannerText {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .pageContent {
+        flex-direction: column-reverse;
+    }
+
+    .posts {
+        max-width: 100%; /* Ensure it takes the full width of the parent */
+        width: 100%; /* Prevent it from exceeding the parent's width */
+    }
+
+    .search {
+        margin: 0.5rem 0;
+    }
+
+    .subreddits {
+        margin-top: 10px;
+    }
+}
+
+/* tablets */
+@media (min-width: 541px) and (max-width: 1024px) {
+
+    .bannerText {
+        margin-top: 10px;
+    }
+
+    .posts {
+        max-width: 100%; /* Ensure it takes the full width of the parent */
+        width: 100%; /* Prevent it from exceeding the parent's width */
+    }
 }

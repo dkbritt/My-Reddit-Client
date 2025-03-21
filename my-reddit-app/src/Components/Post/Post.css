@@ -15,6 +15,7 @@ h3:hover {
 .post-container {
     display: flex;
     border: 1px solid #D5C1B3;
+    max-width: 100%;
     border-radius: .25rem;
     padding: 1rem;
     margin: 0 1rem 1rem 1rem;
@@ -74,4 +75,79 @@ h3:hover {
 
 .visible {
     display: block;
+}
+
+
+
+/* Different screen sizes */
+
+/* Cell phones */
+@media (max-width: 540px) {
+  
+    .post-content {
+        max-width: 100%; /* Ensure it takes the full width of the parent */
+        padding: 0; /* Remove padding for smaller screens */
+    }
+    
+    .post-details {
+        display: flex;
+        max-width: 100%;
+        flex-direction:row; /* Ensure row direction */
+        justify-content: space-between; /* Space out items */
+        align-items: flex-start; /* Center items vertically */
+    }
+
+    .post-author, .post-created, .post-comments {
+        font-size: 0.5rem;
+    }
+
+    .post-header { 
+        display: flex;
+        justify-content: space-between;
+        align-items: self-end;
+        flex-direction: column-reverse;
+        margin-top: 0.5rem;
+    }
+
+    .comments-list.visible {
+        width: 100%; /* Ensure it takes the full width of the parent */
+        max-width: 100%; /* Prevent it from exceeding the parent's width */
+        overflow-wrap: anywhere; /* Allow text to wrap */
+    }
+
+}
+
+/* tablets */
+@media (min-width: 541px) and (max-width: 1024px) {
+
+    .post-content {
+        max-width: 100%; /* Ensure it takes the full width of the parent */
+        padding: 0; /* Remove padding for smaller screens */
+    }
+    
+    .post-details {
+        display: flex;
+        max-width: 100%;
+        flex-direction:row; /* Ensure row direction */
+        justify-content: space-between; /* Space out items */
+        align-items: flex-start; /* Center items vertically */
+    }
+
+    .post-author, .post-created, .post-comments {
+        font-size: 0.5rem;
+    }
+
+    .post-header { 
+        display: flex;
+        justify-content: space-between;
+        align-items: self-end;
+        flex-direction: column-reverse;
+        margin-top: 0.5rem;
+    }
+
+    .comments-list.visible {
+        width: 100%; /* Ensure it takes the full width of the parent */
+        max-width: 100%; /* Prevent it from exceeding the parent's width */
+        overflow-wrap: anywhere; /* Allow text to wrap */
+    }
 }

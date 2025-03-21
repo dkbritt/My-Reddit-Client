@@ -1,0 +1,27 @@
+/* Different screen sizes */
+
+/* Cell phones */
+@media (max-width: 540px) {
+    .comment-content {
+        max-width: 100%;
+        overflow-wrap: inherit;
+    }
+
+    .comment-list {
+        width: 100%;
+        max-width: 100%;
+        overflow-wrap: inherit;
+    }
+
+}
+
+/* tablets */
+@media (min-width: 541px) and (max-width: 1024px) {
+
+    .comment-list {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        box-sizing: border-box;
+    }
+}

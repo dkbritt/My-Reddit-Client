@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaReddit } from 'react-icons/fa';
 import Subreddits from '../Subreddits/Subreddits';
 import PostsList from '../PostsList/PostsList';
@@ -17,6 +17,11 @@ const HomePage = () => {
     const handleSearch = (query) => {
         setSearchQuery(query);
     };
+
+    useEffect(() => {
+        // Scroll to the top of the page when selectedSubreddit changes
+        window.scrollTo(0, 0);
+    }, [selectedSubreddit]);
 
     return (
         <div className='home'>

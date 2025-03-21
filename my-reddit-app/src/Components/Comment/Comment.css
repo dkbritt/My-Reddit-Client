@@ -5,6 +5,10 @@
 
 .comment-body {
     padding-top: 0.5rem;
+    width: 100%; /* Ensure it takes the full width of the parent */
+    max-width: 100%; /* Prevent it from exceeding the parent's width */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    overflow-x: auto; /* Add horizontal scroll if content overflows */
 }
 
 .comment-container {
@@ -14,7 +18,10 @@
     padding: 1rem;
     border: 1px solid #e1e1e1;
     border-radius: 5px;
-    max-width: 100%;
+    width: 100%; /* Ensure it takes the full width of the parent */
+    max-width: 100%; /* Prevent it from exceeding the parent's width */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    overflow-x: auto; /* Add horizontal scroll if content overflows */
 }
 
 .comment-created {
@@ -26,9 +33,64 @@
     justify-content: space-between;
 }
 
-.comment-details{
+.comment-details {
     display: flex;
     flex-direction: column;
     margin-left: 1rem;
     flex: 1;
+    width: 100%; /* Ensure it takes the full width of the parent */
+    max-width: 100%; /* Prevent it from exceeding the parent's width */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+
+}
+
+/* Different screen sizes */
+
+/* Cell phones */
+@media (max-width: 540px) {
+    .comment-author {
+        font-size: 0.8rem;
+    }
+    
+    .comment-container {
+        width: 100%;
+        max-width: 100%;
+        overflow-wrap: inherit;
+    }
+
+    .comment-body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+    }
+
+    .comment-created {
+        font-size: 0.55rem;
+    }
+
+    .comment-details {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+/* tablets */
+@media (min-width: 541px) and (max-width: 1024px) {
+    .comment-container {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+    }
+
+    .comment-body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+    }
+
+    .comment-details {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+    }
 }

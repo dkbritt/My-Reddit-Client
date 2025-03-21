@@ -1,0 +1,21 @@
+/* Different screen sizes */
+
+/* Cell phones */
+@media (max-width: 540px) {
+    .posts-list {
+        width: 100%; /* Ensure it takes the full width of the parent */
+        max-width: 100%; /* Prevent it from exceeding the parent's width */
+        overflow-x: auto; /* Add horizontal scroll if content overflows */
+    }
+
+}
+
+/* tablets */
+@media (min-width: 541px) and (max-width: 1024px) {
+
+    .posts-list {
+        width: 100%; /* Ensure it takes the full width of the parent */
+        max-width: 100%; /* Prevent it from exceeding the parent's width */
+        overflow-x: auto; /* Add horizontal scroll if content overflows */
+    }
+}

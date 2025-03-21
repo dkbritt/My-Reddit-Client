@@ -56,7 +56,7 @@ const CommentsList = ({ subreddit, postId }) => {
     
     
     return (
-        <div className='comments-list'>
+        <div className='comment-list'>
             {comments.map((comment, index) => (
                 <div key={index}  className='comment-content'>
                     <Comment  comment={comment}/>
