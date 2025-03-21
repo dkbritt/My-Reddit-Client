@@ -4,7 +4,7 @@ import { formatTimeAgo } from '../../utils/formatTimeAgo';
 import { formatNumber } from '../../utils/formatNumber';
 import { FaRegCommentAlt } from "react-icons/fa";
 import Voting from '../Voting/Voting';
-import CommentsList from '../CommentsList.js/CommentsList';
+import CommentsList from '../CommentsList/CommentsList';
 
 const Post = ({ post }) => {
     const [commentsHidden, setCommentsHidden] = React.useState(true);

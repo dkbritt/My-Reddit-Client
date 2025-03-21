@@ -1,9 +1,9 @@
 import React from 'react';
-import { render } from '@testing-library/react';
-import PostsList from './../Components/PostsList';
-import Post from '../Components/Post';
+import { render, waitFor } from '@testing-library/react';
+import PostsList from './PostsList';
+import Post from '../Post/Post';
 
-jest.mock('../Components/Post', () => () => <div>Mocked Post</div>);
+jest.mock('../Post/Post', () => () => <div>Mocked Post</div>);
 
 describe('PostsList Component', () => {
   const mockPosts = [
@@ -33,13 +33,21 @@ describe('PostsList Component', () => {
     }
   ];
 
+  beforeEach(() => {
+    fetch.resetMocks();
+  });
+
   it('should render without errors', () => {
-    const { getByText } = render(<PostsList selectedSubreddit="test" />);
+    fetch.mockResponseOnce(JSON.stringify({ data: { children: mockPosts.map(post => ({ data: post })) } }));
+    const { getByText } = render(<PostsList selectedSubreddit="test" searchQuery="" />);
     expect(getByText('Loading posts...')).toBeInTheDocument();
   });
 
-  it('should render the correct number of Post components', () => {
-    const { getAllByText } = render(<PostsList selectedSubreddit="test" />);
-    expect(getAllByText('Mocked Post').length).toBe(mockPosts.length);
+  it('should render the correct number of Post components', async () => {
+    fetch.mockResponseOnce(JSON.stringify({ data: { children: mockPosts.map(post => ({ data: post })) } }));
+    const { getAllByText } = render(<PostsList selectedSubreddit="test" searchQuery="" />);
+    await waitFor(() => {
+      expect(getAllByText('Mocked Post').length).toBe(mockPosts.length);
+    });
   });
-});
+});q

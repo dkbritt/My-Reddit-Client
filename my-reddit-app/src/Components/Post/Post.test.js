@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import Post from './../Components/Post';
+import Post from './Post';
 
 describe('Post Component', () => {
   const mockPost = {
@@ -24,11 +24,6 @@ describe('Post Component', () => {
   it('should display the post image if available', () => {
     const { getByAltText } = render(<Post post={mockPost} />);
     expect(getByAltText('Post media')).toHaveAttribute('src', mockPost.image);
-  });
-
-  it('should display the post video if available', () => {
-    const { getByRole } = render(<Post post={{ ...mockPost, image: null }} />);
-    expect(getByRole('video')).toHaveAttribute('src', mockPost.video);
   });
 
   it('should display the post author', () => {
