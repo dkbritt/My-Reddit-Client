@@ -14,6 +14,7 @@ Reddit Lurker is a web application that allows users to browse and search for po
   - Node.js
   - Express
   - Node-fetch
+  - Backend hosted on Railway
 - **Other:**
   - date-fns (for date formatting)
 
