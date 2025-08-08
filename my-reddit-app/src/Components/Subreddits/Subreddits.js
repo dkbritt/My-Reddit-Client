@@ -18,7 +18,7 @@ const Subreddits = ({ onSelectedSubreddit }) => {
             }
 
             try {
-                const response = await fetch('http://localhost:5000/api/subreddits');
+                const response = await fetch('https://my-reddit-client-backend-server.onrender.com/api/subreddits');
                 if (!response.ok) {
                     throw new Error(`Error: ${response.status} ${response.statusText}`);
                 }

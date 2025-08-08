@@ -20,7 +20,7 @@ const CommentsList = ({ subreddit, postId }) => {
             }
             
             try {
-                const response = await fetch(`http://localhost:5000/api/r/${subreddit}/comments/${postId}`);
+                const response = await fetch(`https://my-reddit-client-backend-server.onrender.com/api/r/${subreddit}/comments/${postId}`);
                 if (!response.ok) {
                     throw new Error(`Error: ${response.status} ${response.statusText}`);
                 }
