@@ -21,6 +21,8 @@ async function getRedditToken() {
         },
         body: 'grant_type=client_credentials'
     });
+    const text = await response.text();
+    console.log('Reddit token response:', text);
     const data = await response.json();
     return data.access_token;
 }
