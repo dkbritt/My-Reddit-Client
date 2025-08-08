@@ -9,7 +9,10 @@ app.use(cors()); // Enable CORS for all routes
 
 app.get('/api/subreddits', async (req, res) => {
     try {
-        const response = await fetch('https://www.reddit.com/subreddits.json');
+        const response = await fetch('https://www.reddit.com/subreddits.json', {
+        headers: {
+            'User-Agent': 'RedditLurker/1.0 (by /u/guest)'
+        }});
         if (!response.ok) {
             const errorText = await response.text();
             throw new Error(`Error: ${response.status} ${response.statusText} - ${errorText}`);
@@ -27,7 +30,11 @@ app.get('/api/r/:subreddit/comments/:postId', async (req, res) => {
     const url = `https://www.reddit.com/r/${subreddit}/comments/${postId}.json`; // Correct URL construction
     try {
         console.log(`Fetching URL: ${url}`); // Log the URL being fetched
-        const response = await fetch(url);
+        const response = await fetch(url, {
+            headers: {
+                'User-Agent': 'RedditLurker/1.0 (by /u/guest)'
+            }
+        });
         if (!response.ok) {
             const errorText = await response.text();
             throw new Error(`Error: ${response.status} ${response.statusText} - ${errorText}`);
@@ -45,7 +52,11 @@ app.get('/api/r/:subreddit.json', async (req, res) => {
     const url = `https://www.reddit.com/r/${subreddit}.json`;
     try {
         console.log(`Fetching URL: ${url}`); // Log the URL being fetched
-        const response = await fetch(url);
+        const response = await fetch(url, {
+            headers: {
+                'User-Agent': 'RedditLurker/1.0 (by /u/guest)'
+            }
+        });
         if (!response.ok) {
             const errorText = await response.text();
             throw new Error(`Error: ${response.status} ${response.statusText} - ${errorText}`);
