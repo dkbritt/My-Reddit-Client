@@ -20,7 +20,7 @@ const CommentsList = ({ subreddit, postId }) => {
             }
             
             try {
-                const response = await fetch(`my-reddit-client-production.up.railway.app/api/r/${subreddit}/comments/${postId}`);
+                const response = await fetch(`https://my-reddit-client-production.up.railway.app/api/r/${subreddit}/comments/${postId}`);
                 if (!response.ok) {
                     throw new Error(`Error: ${response.status} ${response.statusText}`);
                 }
